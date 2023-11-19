@@ -9,6 +9,11 @@ class IndexeController extends Controller
 {
     public function __invoke()
     {
-        return inertia('Index/Index');
+        return inertia(
+            'Index/Index',
+            [
+                'message' => 'Hello from Laravel!'
+            ]
+        );
     }
 }
