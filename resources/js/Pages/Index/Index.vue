@@ -11,11 +11,3 @@ import {Link} from "@inertiajs/vue3";
 
 defineProps(["message"]);
 </script>
-
-<script>
-import MainLayout from "@/Pages/Layouts/MainLayout.vue";
-
-export default {
-    layout: MainLayout
-}
-</script>
