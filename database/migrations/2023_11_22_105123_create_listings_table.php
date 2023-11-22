@@ -15,12 +15,12 @@ return new class extends Migration
             $table->id();
             $table->unsignedTinyInteger('beds');
             $table->unsignedTinyInteger('baths');
-            $table->unsignedTinyInteger('area');
+            $table->unsignedSmallInteger('area');
 
             $table->tinyText('city');
             $table->tinyText('code');
             $table->tinyText('street');
-            $table->tinyText('street-nr');
+            $table->tinyText('street_nr');
 
             $table->unsignedInteger('price');
 
