@@ -22,14 +22,14 @@ class StoreRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'beds' => 'required',
-            'baths' => 'required',
-            'area' => 'required',
+            'beds' => 'required|integer|min:0|max:20',
+            'baths' => 'required|integer|min:0|max:20',
+            'area' => 'required|integer|min:15|max:2000',
             'city' => 'required',
             'code' => 'required',
             'street' => 'required',
-            'street_nr' => 'required',
-            'price' => 'required',
+            'street_nr' => 'required|integer|min:1|max:100',
+            'price' => 'required|integer|min:1|max:200000000',
 
         ];
     }
