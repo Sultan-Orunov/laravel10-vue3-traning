@@ -29,6 +29,7 @@ setInterval(() => timer.value++, 1000)
 <style scoped>
 
 .success{
+    width: 50%;
     background-color: olivedrab;
     padding: 10px;
     border: 1px solid darkgreen;
