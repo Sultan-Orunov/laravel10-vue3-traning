@@ -34,6 +34,9 @@ class ListingController extends Controller
     {
         $data = $request->validated();
         Listing::create($data);
+
+        return redirect()->route('listing.index')
+            ->with('success', 'Listing was created');
     }
 
     /**
