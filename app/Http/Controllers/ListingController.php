@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\Listing\StoreRequest;
+use App\Http\Requests\Listing\UpdateRequest;
 use App\Models\Listing;
-use Illuminate\Http\Request;
 
 class ListingController extends Controller
 {
@@ -53,17 +53,23 @@ class ListingController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Listing $listing)
     {
-        //
+        return inertia('Listing/Edit', [
+            'listing' => $listing
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(UpdateRequest $request, Listing $listing)
     {
-        //
+        $data = $request->validated();
+        $listing->update($data);
+
+        return redirect()->route('listing.index')
+            ->with('message', 'Listing Update Successfully');
     }
 
     /**

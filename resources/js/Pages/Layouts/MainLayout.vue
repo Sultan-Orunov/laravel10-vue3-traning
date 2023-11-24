@@ -1,7 +1,7 @@
 <template>
     <div>
-        <Link href="/">Index Page</Link>&nbsp;
-        <Link href="/hello">Show Page</Link>
+        <Link href="/listing">Listings Page</Link>&nbsp;&nbsp;
+        <Link href="/listing/create">Create Listing Page</Link>
         <div>Mi page witch time: {{ timer }}</div>
 
         <div v-if="successMessage" class="success"> {{ successMessage }}</div>

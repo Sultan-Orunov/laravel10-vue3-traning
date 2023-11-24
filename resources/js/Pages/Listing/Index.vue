@@ -1,8 +1,13 @@
 <template>
 <div v-for="listing in listings" :key="listing.id">
-    <Link :href="`/listing/${listing.id}`">
-        <ListingAddress :listing="listing" />
-    </Link>
+    <div class="wrap">
+        <Link :href="`/listing/${listing.id}`">
+            <ListingAddress :listing="listing" />
+        </Link>&nbsp;&nbsp;&nbsp;
+    </div>
+    <div>
+        <Link class="edit" :href="`/listing/${listing.id}/edit`">Редактировать</Link>
+    </div>
 </div>
 </template>
 
@@ -13,4 +18,13 @@ defineProps({
     listings: Array
 })
 </script>
+
+<style scoped>
+.wrap{
+    margin-top: 10px;
+}
+.edit{
+    color: green;
+}
+</style>
 
