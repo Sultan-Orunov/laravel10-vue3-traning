@@ -73,7 +73,7 @@ const form = useForm({
     street_nr: props.listing.street_nr,
     price: props.listing.price
 })
-const update = () => form.patch(`/listing/${props.listing.id}`)
+const update = () => form.patch(route('listing.update', props.listing.id))
 </script>
 
 <style scoped>

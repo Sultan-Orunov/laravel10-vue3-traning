@@ -2,7 +2,7 @@
 <div>
     <ListingAddress :listing="listing" />
 </div>
-    <Link href="/listing">Listing page</Link>
+    <Link :href="route('listing.index')">Listings page</Link>
 
 </template>
 

@@ -1,13 +1,13 @@
 <template>
 <div v-for="listing in listings" :key="listing.id">
     <div class="wrap">
-        <Link :href="`/listing/${listing.id}`">
+        <Link :href="route('listing.show', listing.id)">
             <ListingAddress :listing="listing" />
         </Link>&nbsp;&nbsp;&nbsp;
     </div>
     <div>
-        <Link class="edit" :href="`/listing/${listing.id}/edit`">Редактировать</Link>&nbsp;&nbsp;
-        <Link class="delete" :href="`/listing/${listing.id}`" method="delete" as="button">Удалить</Link>
+        <Link class="edit" :href="route('listing.edit', listing.id)">Редактировать</Link>&nbsp;&nbsp;
+        <Link class="delete" :href="route('listing.destroy', listing.id)" method="delete" as="button">Удалить</Link>
     </div>
 </div>
 </template>
