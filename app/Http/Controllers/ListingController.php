@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\Listing\StoreRequest;
 use App\Models\Listing;
 use Illuminate\Http\Request;
 
@@ -29,9 +30,10 @@ class ListingController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreRequest $request)
     {
-        //
+        $data = $request->validated();
+        Listing::create($data);
     }
 
     /**
