@@ -4,6 +4,7 @@ import MainLayout from "@/Pages/Layouts/MainLayout.vue";
 import {ZiggyVue} from 'ziggy';
 import '../css/app.css';
 
+
 createInertiaApp({
     resolve: async (name) => {
         const pages = import.meta.glob("./Pages/**/*.vue", { eager: true });
@@ -17,5 +18,11 @@ createInertiaApp({
             .use(plugin)
             .use(ZiggyVue)
             .mount(el);
+    },
+    progress: {
+        delay: 0,
+        color: '#4f49e5',
+        includeCSS: true,
+        showSpinner: true
     },
 });
