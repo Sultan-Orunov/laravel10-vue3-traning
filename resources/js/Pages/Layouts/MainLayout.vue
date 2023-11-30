@@ -13,7 +13,7 @@
                     <Link :href="route('listing.index')">LaraZillo</Link>
                 </div>
                 <div
-                    class="text-medium bg-indigo-600 hover:bg-indigo-700 text-white p-2 rounded"
+                    class="btn-primary"
                 >
                     <Link :href="route('listing.create')">+ New Listing</Link>
                 </div>
