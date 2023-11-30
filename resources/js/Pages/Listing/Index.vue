@@ -5,8 +5,8 @@
                 <Link :href="route('listing.show', listing.id)">
                     <Price :price="listing.price" class="text-2xl font-bold"/>
                     <ListingSpace :listing="listing" class="text-lg"/>
-                    <ListingAddress :listing="listing" class="text-gray-500"/> </Link
-                >&nbsp;&nbsp;&nbsp;
+                    <ListingAddress :listing="listing" class="text-gray-500"/>
+                </Link>&nbsp;&nbsp;&nbsp;
             </div>
             <div>
                 <Link class="edit" :href="route('listing.edit', listing.id)"
