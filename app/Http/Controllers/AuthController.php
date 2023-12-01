@@ -13,6 +13,9 @@ class AuthController extends Controller
         return inertia('Auth/Login');
     }
 
+    /**
+     * @throws ValidationException
+     */
     public function store(StoreRequest $request)
     {
         $data = $request->validated();
@@ -23,7 +26,7 @@ class AuthController extends Controller
         }
         $request->session()->regenerate();
 
-        return redirect()->intended();
+        return redirect()->intended('/listing');
     }
 
     public function destroy()

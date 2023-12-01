@@ -12,10 +12,15 @@
                 >
                     <Link :href="route('listing.index')">LaraZillo</Link>
                 </div>
-                <div
-                    class="btn-primary"
-                >
-                    <Link :href="route('listing.create')">+ New Listing</Link>
+                <div v-if="user" class="flex items-center gap-4">
+                    <div class="text-sm text-gray-500">
+                        {{user.name}}
+                    </div>
+                    <Link :href="route('listing.create')" class="btn-primary">+ New Listing</Link>
+                    <div>Logout</div>
+                </div>
+                <div v-else>
+                    <Link :href="route('login')" >Sign-In</Link>
                 </div>
             </nav>
         </div>
@@ -41,4 +46,8 @@ const page = usePage();
 const successMessage = computed(() => {
     return page.props.flash;
 });
+
+const user = computed(() => {
+    return page.props.user
+})
 </script>

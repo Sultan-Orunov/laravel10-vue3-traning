@@ -4,11 +4,12 @@
             <div>
                 <label class="label" for="email">Email (username)</label>
                 <input class="input" id="email" type="text" v-model="form.email" />
-                <div class="input-error">{{ form.errors.email }}</div>
+                <div v-if="form.errors.email" class="input-error">{{ form.errors.email }}</div>
             </div>
             <div class="mt-4">
                 <label class="label" for="password">Password:</label>
                 <input class="input" id="password" type="password" v-model="form.password" />
+                <div v-if="form.errors.password" class="input-error">{{ form.errors.password }}</div>
             </div>
             <div class="mt-4">
                 <button class="btn-primary w-full" type="submit">Login</button>
