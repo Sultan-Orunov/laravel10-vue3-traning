@@ -21,7 +21,7 @@
         </div>
     </header>
 
-    <main class="container mx-auto p-4">
+    <main class="container mx-auto p-4 w-full">
         <div
             v-if="successMessage"
             class="mb-4 bg-green-200 dark:bg-green-800 dark:text-green-200 border border-green-600 dark:border-green-900 p-2 rounded-md text-green-600 p-2"
