@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\Auth\StoreRequest;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\ValidationException;
 
@@ -29,8 +30,12 @@ class AuthController extends Controller
         return redirect()->intended('/listing');
     }
 
-    public function destroy()
+    public function destroy(Request $request)
     {
-        return 'destroy controller';
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        return redirect()->route('listing.index');
     }
 }
