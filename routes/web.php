@@ -29,3 +29,4 @@ Route::post('login', [AuthController::class, 'store'])->name('login.store');
 Route::delete('logout', [AuthController::class, 'destroy'])->name('logout');
 
 Route::get('user-account/create', [\App\Http\Controllers\UserAccountController::class, 'create'])->name('user-account.create');
+Route::post('user-account', [\App\Http\Controllers\UserAccountController::class, 'store'])->name('user-account.store');
