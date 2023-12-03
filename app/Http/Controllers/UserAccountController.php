@@ -15,9 +15,7 @@ class UserAccountController extends Controller
 
     public function store(StoreRequest $request){
         $data = $request->validated();
-        $data['password'] = Hash::make($data['password']);
-        $user = User::create($data);
-        Auth::login($user);
+        Auth::login(User::create($data));
 
         return redirect()->route('listing.index')
             ->with('message', 'Account created!');
